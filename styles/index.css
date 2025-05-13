@@ -4,18 +4,75 @@
 #wrap .intro {
     height:100vh;
     background:url(../images/bg1.png)no-repeat center / cover;
+    position:relative;
+    padding:100px 335px;
     
 }
-#wrap .intro .container {}
-#wrap .intro .container h1:nth-child(1) {
+#wrap .intro::before {
+    content:''; display:block; /* 가상요소(after)의 필수속성 */
+    width:100%; height:100%;
+    position:absolute; left:0; top:0;
+    background:linear-gradient(360deg, #000, transparent);
+    z-index:100;
 
 }
-#wrap .intro .container h1:nth-child(1) a {}
+#wrap .intro .container {
+    position:relative; z-index:200; /* z-index before보다 위에 올라와있어야 함. before보다 낮게있으면 a태그들이 선택이 안됨 그렇기 때문에 z-index을 사용해서 위치를 각각 주기 */
+    border:1px solid aqua;
+    max-width:1250px; height:auto;
+    min-width:320px;
+    margin:0 auto; /* 디바이스크기보다 width가 작은 블록요소를 가운데배치하는 방법 */
+    /* 형제-형제 margin, 부모-자식 padding */
+    display:block;
+    /* 자식, 자손이 인라인일 경우 수평정렬 text-align */
+    text-align:center;
+    /* 자식의 float 적용으로 인해 부모 바깥으로 나가는 문제해결 오버플로워 히든 */
+    overflow:hidden;
+    
+    
+}
+#wrap .intro .container h1:nth-child(1) {
+    text-align:left; /* 팬더로고가 왼쪽으로 감 */
+    margin:0 0 100px;
+}
+#wrap .intro .container h1:nth-child(1) a {
+}
 #wrap .intro .container h1:nth-child(1) a img {width:89px;/* 가로쓰면 세로는 따라옴 */}
-#wrap .intro .container h1:nth-child(2) {}
-#wrap .intro .container h1:nth-child(2) em {}
-#wrap .intro .container a .sponsor_btn {}
-#wrap .intro .container a .sponsor_question {}
+#wrap .intro .container h1:nth-child(2) {
+    font-size:4.375rem;
+    color:#fff;
+    line-height:1.3;
+}
+#wrap .intro .container h1:nth-child(2) em {
+    color:#fff;
+    font-weight:700;
+}
+#wrap .intro .container .sponsor_btn {
+    display:block; 
+    font-size:2.125rem;
+    font-weight:700;
+    color:#fff;
+    width:409px; margin:100px auto; /* 화면 가운데 오게 */
+    /* 수직 중앙 배치해야하는 글자가 1줄일 경우 height 생략 가능.
+    line-height만 px값으로 정리 */
+    line-height:71px; /* 높이값을 line-height로 주기 */
+    background:linear-gradient(90deg,#FE9300,#FF7300);
+    border-radius:50px;
+    
+
+}
+#wrap .intro .container .sponsor_question {
+    float:right;
+    color:#fff;
+    font-size:1.625rem;
+    background:#000;
+    border-radius:30px;
+    height:51px;
+    line-height:1.2;
+    width:439px;
+    padding-top:10px;
+    
+}
 /* 2행 ============================퀴즈 */
 /* 3행 ============================새끼 북극곰 이야기 */
 /* 4행 ============================빙하면적 감소*/
