@@ -1,11 +1,13 @@
 /* index.css */
+/* 반응형 css 속성 변경 시 애니메이션 적용 속성 */
+body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 필수는 아님  */
 /* 1행 ============================북극곰 후원 안내 */
 #wrap {} /* 기본값 유지를 위해 작성하지 않음. 기본값-> 너비는 부모의 100%, 높이는 내용만큼 */
 #wrap .intro { /* 큰 1행 */
     height:100vh; /*  */
     background:url(../images/bg1.png)no-repeat center / cover;
     position:relative;
-    padding:100px 335px;
+    padding:100px 0;
     
 }
 #wrap .intro::before {
@@ -78,13 +80,16 @@
     background:url(../images/quiz_bg.png) center / cover;
 }
 #wrap .quiz .container {
-    width:1250px; border:1px solid aqua;
+    max-width:1250px; 
+    min-width:320px;
+    border:1px solid aqua;
     margin:0 auto; /* 가운데 */
     display:grid; /* 왼쪽퀴즈, 오른쪽참여현황 정렬grid */
     grid-template-columns:1fr 1fr; /* 반반 옆으로 */
     padding:150px 0; /* 틀린건 아니지만 부모한테 주려면 quiz에 줘도 됨 */
+    
 }
-#wrap .quiz .container #left_quiz {}
+#wrap .quiz .container #left_quiz {margin-bottom:50px;}
 #wrap .quiz .container #left_quiz * {color:#fff;}/* left quiz의 모든 자식 자손 */
 #wrap .quiz .container #left_quiz h2 {
     text-align:center;
@@ -120,14 +125,50 @@
     height:54px;
     border-radius:50px;
 }
-#wrap .quiz .container .right {text-align:right;}
+#wrap .quiz .container .right {text-align:right; padding:68.92px 0;}
 #wrap .quiz .container .right p {}
 #wrap .quiz .container .right p:nth-child(1) {}
 #wrap .quiz .container .right p:nth-child(1) img {
-    
+    width:70%;
 }
 #wrap .quiz .container .right p:nth-child(2){color:#fff;}
+
 /* 3행 ============================새끼 북극곰 이야기 */
+#wrap .ad {
+    background-image:url(../images/video_bg.png) right /cover;
+    /*  background-image:url(../images/video_bg.png) center / cover;*/
+    padding:200px 0;
+
+}
+#wrap .ad .container {
+    max-width:1250px; min-width:320px;
+    text-align:center;
+    margin:0 auto;
+    border:3px solid orange;
+}
+#wrap .ad .container h2 {
+    font-size:3.438rem;
+    font-weight:500;
+    line-height:1.2;
+    margin-bottom:70px;
+    
+}
+#wrap .ad .container iframe {
+    max-width:900px; width:100%;
+    height:600px; margin:70px 0;
+}
+#wrap .ad .container .sponsor_btn {
+    display:block;
+    width:409px;
+    line-height:71px;
+    background:linear-gradient(90deg,#FE9300,#FF7300);
+    border-radius:50px;
+    font-size:2.125rem;
+    font-weight:700;
+    color:#fff;
+    margin:100px auto 0;
+}
+
 /* 4행 ============================빙하면적 감소*/
 /* 5행 ============================인류재앙 */
 /* 6행 ============================지구위기 */
