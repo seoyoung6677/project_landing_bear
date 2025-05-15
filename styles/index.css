@@ -160,7 +160,7 @@ body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 
 #wrap .ad .container .sponsor_btn {
     display:block;
     width:409px;
-    line-height:71px;
+    line-height:71px; 
     background:linear-gradient(90deg,#FE9300,#FF7300);
     border-radius:50px;
     font-size:2.125rem;
