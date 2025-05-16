@@ -25,6 +25,10 @@
     
     /* ===============================3행 video */
     #wrap .ad {padding:200px 80px;}
+    /* ===============================5행 인류재앙 */
+    #wrap .disaster {
+        padding:200px 80px;
+    }
 }
 
 /* Mobile 849~320 */
@@ -51,5 +55,20 @@
         width:270px;
         font-size:1.375rem;
     }
-
+    #wrap .disaster {padding:70px 15px;}
+    #wrap .disaster .container .list {
+        flex-flow:column nowrap;
+    }
+    #wrap .disaster .container .list li .bg {
+        height:150px;
+    }
+    #wrap .disaster .container h2 {
+        font-size:1.375rem;
+    }
+    #wrap .disaster .container > p {
+        font-size:0.813rem;}
+    #wrap .disaster .container .list li > p {
+        font-size:0.813rem;
+        height:max-content; /* 내용에 맞혀서 크기 조절됨 */
+    }
 }

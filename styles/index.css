@@ -20,7 +20,7 @@ body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 
 }
 #wrap .intro .container { 
     position:relative; z-index:200; /* z-index before보다 위에 올라와있어야 함. before보다 낮게있으면 a태그들이 선택이 안됨 그렇기 때문에 z-index을 사용해서 위치를 각각 주기 */
-    border:1px solid aqua;
+    /* border:1px solid aqua; */
     max-width:1250px; height:auto;
     min-width:320px;
     margin:0 auto; /* 디바이스크기보다 width가 작은 블록요소를 가운데배치하는 방법 */
@@ -82,7 +82,7 @@ body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 
 #wrap .quiz .container {
     max-width:1250px; 
     min-width:320px;
-    border:1px solid aqua;
+    /* border:1px solid aqua; */
     margin:0 auto; /* 가운데 */
     display:grid; /* 왼쪽퀴즈, 오른쪽참여현황 정렬grid */
     grid-template-columns:1fr 1fr; /* 반반 옆으로 */
@@ -144,7 +144,7 @@ body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 
     max-width:1250px; min-width:320px;
     text-align:center;
     margin:0 auto;
-    border:3px solid orange;
+    /* border:3px solid orange; */
 }
 #wrap .ad .container h2 {
     font-size:3.438rem;
@@ -170,7 +170,123 @@ body * {transition:all 0.5s;} /* 반응형 적용시 부드럽게 적용됨 !!! 
 }
 
 /* 4행 ============================빙하면적 감소*/
+#wrap .glacial_reduction {
+    background-image:url(../images/50_bg.png);
+    background-size:cover;
+    padding:200px 0;
+}
+#wrap .glacial_reduction .container {
+    border:3px solid red;
+    max-width:1250px; min-width:320px;
+    margin:0 auto;
+    
+}
+#wrap .glacial_reduction .container h2 {
+    font-size:3.438rem; color:#fff;
+    line-height:1.2;
+    margin-bottom:81px;
+}
+#wrap .glacial_reduction .container h2 em {background-color:#fff; color:#050505;}
+#wrap .glacial_reduction .container p {
+    color:#fff;
+    font-size:2.125rem;
+}
+#wrap .glacial_reduction .container p img {
+    width:100%;
+    height:550px;
+}
 /* 5행 ============================인류재앙 */
+#wrap .disaster {
+    background-color:#F5F5F5;
+    padding:200px 0;
+}
+#wrap .disaster .container {
+    /* border:1px solid red; */
+    max-width:1250px; min-width:320px;
+    /* 최소 320~ 최대 1250 사이 너비값은 가변형 세팅 */
+    /* (위) 큰 범위값 세팅 후 @media 규칙 내에서 태블릿, 모바일에 맞는 레이아웃 재수성하며 반응형 제작 */
+    margin:0 auto;
+    text-align:center;
+}
+#wrap .disaster .container h2 {
+    font-size:2.5rem;
+    font-weight:700;
+    margin-bottom:55px;
+    
+    
+    
+}
+#wrap .disaster .container > p {}
+#wrap .disaster .container .list {
+    display:flex; flex-flow:row nowrap;
+    /* 옆으로 정렬하는 대상(li)의 부모 (flex) */
+    /* flex의 자식요소들을 옆으로정렬(기본값) flex-flow:row nowrap */
+    gap:20px; /* 사이 여백 */
+    margin-top:55px;
+}
+#wrap .disaster .container .list li {
+    background:#fff;
+    flex:1;
+}
+#wrap .disaster .container .list li .bg {
+    height:320px; /* 백그라운드 이미지 크기 */
+    background-position:0 70%;
+    background-size:cover; /* 100%로도 가능 */
+    position:relative;
+}
+#wrap .disaster .container .list li .bg::before {
+    content:''; display:block; /* 블록은 크기 인식되라고 설저ㅇ */
+    position:absolute; left:0; top:0; width:100%; height:100%;
+    /* (위) content~height속성까지 before 또는 after 가상요소 사용 시 필수속성 모음 */
+    background:linear-gradient(180deg,#000 10%, transparent 60%);
+    /* background:linear-gradient(#첫번째색상 위치%, #두번째색상 위치%);
+    */
+    z-index:50;
+}
+#wrap .disaster .container .list li .bg h3 {
+    font-size:2.688rem;
+    color:#fff;
+    font-weight:700;
+    z-index:100;
+    position:relative; /* z-index 쓰려면 반드시 position이 있어야함 */
+    /* z-index속성은 position속성이 선행되어야만 사용할 수 있는 중첩 속성이다 */
+    margin-bottom:11px;
+    padding-top:48px;
+}
+#wrap .disaster .container .list li .bg p {
+    z-index:100;
+    color:#fff;
+    position:relative; /* z-index 쓰려면 반드시 position이 있어야함 */
+    /* z-index속성은 position속성이 선행되어야만 사용할 수 있는 중첩 속성이다 */
+    font-weight:500;
+    font-size:1.25rem;
+    
+    
+    
+}
+#wrap .disaster .container .list li > p {
+    font-size:1.25rem;
+    line-height:1.7;
+    height:250px;
+    padding:20px;
+    
+}
+/* 5행 개별배경 선택자 */
+#wrap .disaster .container .list li:nth-child(1) .bg {
+    background-image:url(../images/28.png);
+    
+    
+}
+#wrap .disaster .container .list li:nth-child(2) .bg {
+    background-image:url(../images/27.png);
+    
+}
+#wrap .disaster .container .list li:nth-child(3) .bg {
+    background-image:url(../images/wwf.jpg);
+    background-size:cover;
+    background-position:0 70%;
+
+}
 /* 6행 ============================지구위기 */
 /* 7행 ============================WWF 단체활동 */
 /* 8행 ============================다양한 활동 */
