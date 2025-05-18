@@ -33,7 +33,7 @@
 
 /* Mobile 849~320 */
 @media screen and (max-width:849px){
-    #wrap .intro {padding:0 15px;}
+    #wrap .intro {padding:0 15px;} /* 이거 왜 상하는 0이더라.. */
     #wrap .intro .container h1:nth-child(2) { font-size:1.875rem;}
     
     #wrap .intro .container .sponsor_btn { 
@@ -71,4 +71,11 @@
         font-size:0.813rem;
         height:max-content; /* 내용에 맞혀서 크기 조절됨 */
     }
-}
+    /* ==================4행 빙하면적 감소 */
+    #wrap .glacial_reduction {padding:70px 15px;}  
+    #wrap .glacial_reduction .container h2 {
+        font-size:1.375rem;
+    }
+    #wrap .glacial_reduction .container p:nth-child(2) {
+        font-size:0.813rem;
+    }
